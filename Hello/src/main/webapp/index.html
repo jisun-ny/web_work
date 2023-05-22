@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index.html</title>
+</head>
+<body>
+	<h1>인덱스 페이지 입니다.</h1>
+	<p>내 이름은 <strong>남지선</strong>입니다</p>
+	
+	<!-- 웹에서의 절대 경로 -->
+	<a href="http://localhost:8888/Hello/sub/play.html">놀러가기</a>
+	
+	<!-- **서버 안에서의 절대 경로 -->
+	<a href="/Hello/sub/play.html">놀러가기</a>
+		<!-- /프로젝트명 으로 시작 -->
+	
+	<!-- **현재 위치를 기준으로 한 상대 경로 -->
+	<a href="./sub/play.html">놀러가기</a>
+			<!--  ./ 현재 경로 (생략가능)
+				  ../ 상위 경로 -->
+	<a href="sub/play.html">놀러가기</a>
+	<br />
+	
+	<img src = "images/kim1.png">
+	<br />
+	<form action="/user/signup" method="post">
+		<!-- 응답할 것이 없으면 404 error 발생 
+			저 경로에 대한 요청-->
+		<label for="id">아이디</label>
+		<input type="text" name="id" id="id" />
+		<button type="submit">회원가입</button>
+	</form>
+	<!-- 아이디를 누르고 가입을 누르면 클라이언트가 입력한 정보(가 서버로 날라감 서버에서)를 추출해서 DB에 저장 후 응답을 해줘야함
+		이걸 누 가 하 냐아 ㅏ아 자바 객체가 한다! 즉 우리는 자바 클래스를 만들어 놔야함(부분 프로그래밍! 서버 자체는 이미 만들어져있음 -->
+		
+	<!-- 우리가 직접 만든 클래스로 생성된 객체가 
+		 apache tomcat웹 서버에서 
+		 요청을 처리하는 용도로 사용이 된다. -->
+		 
+	<!-- 이 클래스를 만들때 막 만드는 것이 아니라 정해진 클래스를 상속받거나, 이미 정해진 인터페이스를 상속받아서 만든다. -->
+</body>
+</html>
