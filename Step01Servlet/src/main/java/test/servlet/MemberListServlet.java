@@ -34,7 +34,8 @@ public class MemberListServlet extends HttpServlet{
       pw.println("<html>");
       pw.println("<head>");
       pw.println("<meta charset='utf-8'>");
-      pw.println("<title>회원 목록페이지</title>");
+      pw.println("<tit"
+      		+ "le>회원 목록페이지</title>");
       pw.println("</head>");
       pw.println("<body>");
       pw.println("<h1>회원 목록입니다</h1>");
