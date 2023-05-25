@@ -18,8 +18,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>/member/list.jsp</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+	<%-- navbar 출력하기 --%>
+	<jsp:include page="/include/navbar.jsp">
+		<jsp:param value="member" name="current"/>
+	</jsp:include>
    <div class="container">
       <h1>회원 목록입니다.</h1>
       <div class="text-end"> <!--style="text-align:right;"  -->
@@ -64,6 +69,6 @@
          </tbody>
       </table>
    </div>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
