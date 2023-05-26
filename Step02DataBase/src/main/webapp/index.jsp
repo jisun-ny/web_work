@@ -24,7 +24,10 @@
 		<jsp:param value="index" name="current"/>
 	</jsp:include>
 		
-		<!-- ?current=index 커런트라는 이름(파라미터)으로 index라는 문자열 전달 -->
+		<!-- ?current=index 커런트라는 이름(파라미터)으로 index라는 문자열 전달 
+			String a = request.getParameter("current");
+					 = "index"
+		-->
    <div class="container">
       <h1>인덱스 페이지 입니다.</h1>
       <p>${pageContext.request.contextPath }</p>
@@ -42,6 +45,8 @@
       	<li><a href="/Step02DataBase/member/list.jsp">회원 목록 보기</a></li>
       	<li><a href="${pageContext.request.contextPath }/guest/list.jsp">방명록 목록 보기</a></li>
       </ul>
+      
+  
    </div>
    
   
