@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,6 +26,7 @@
    <script>
    /*myForm2*/
    	document.querySelector("#myForm").addEventListener("submit", (e)=>{
+   		//button에 submit 이벤트가 발생하는것이 아니라 form 자체에 submit이벤트가 발생함!
    		e.preventDefault();
    		//gura_util.js 안에 있는 ajaxFormPromise() 함수 활용하기
    		ajaxFormPromise(e.target) //함수 호출하면서 폼의 참조값 전달
@@ -48,6 +50,7 @@
          //event 객체 안에 있는 preventDefault() 함수를 호출하면 폼 제출 막기
          e.preventDefault();
          //fetch 함수를 이용해서 페이지 전환 없이 입력한 내용을 읽어와서 직접 제출하기
+         
          
          //입력한 내용을 query 문자열로 읽어오기
          const data=new FormData(e.target);
