@@ -5,6 +5,7 @@
 	String id = (String)session.getAttribute("id");
 	//로그인을 했다면 null이 아니고 안했다면 null이다.
 	
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -30,6 +31,7 @@
 		<li><a href=" ${pageContext.request.contextPath }/users/loginform.jsp">로그인</a></li>
 		<li><a href=" ${pageContext.request.contextPath }/private/game.jsp">게임하러가기(로그인필요)</a></li>
 		<li><a href=" ${pageContext.request.contextPath }/private/study.jsp">공부하기(로그인필요)</a></li>
+		<li><a href="file/list.jsp">자료실</a></li>
 	</ul>
 	</div>
 </body>

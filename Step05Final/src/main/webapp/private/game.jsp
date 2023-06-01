@@ -22,7 +22,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>/private/game.jsp</title>.
+<title>/private/game.jsp</title>
 
 </head>
 <body>
