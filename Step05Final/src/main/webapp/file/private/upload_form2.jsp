@@ -8,17 +8,9 @@
 </head>
 <body>
 	<div class="container">
-		<h3>파일 업로드 폼 입니다.</h3>
-		<!-- 
-			파일 업로드 폼 작성법
-			1. method="post"
-			2. enctype="multipart/form-data"
-			3. <input type="file" />
-			- enctype="multipart/form-data" 가 설정된 폼을 전송하면
-			  폼전송된 내용을 추출할때 HttpServletRequest 객체로 추출을 할수 없다
-			 MultipartRequest 객체를 이용해서 추출해야 한다. 
-		 -->
-		<form action="upload.jsp" method="post" enctype="multipart/form-data">
+		<h3>파일 업로드 폼2 입니다.</h3>
+	
+		<form action="ajax_upload.jsp" method="post" enctype="multipart/form-data">
 			<div>
 				<label for="title">제목</label>
 				<input type="text" name="title" id="title"/>
@@ -30,5 +22,8 @@
 			<button type="submit">업로드</button>
 		</form>
 	</div>
+	<script src="${pageContext.request.contextPath }/js/gura_util.js"></script>
+	<script>
+	</script>
 </body>
 </html>
