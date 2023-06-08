@@ -14,6 +14,7 @@
 <head>
 <meta charset="UTF-8">
 <title>/file/list.jsp</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
 </head>
 <body>
 	<div class="container">
@@ -57,6 +58,13 @@
 			<%} %>	
 			</tbody>
 		</table>
+		<ul class="pagination">
+			<%for(int i = 1; i <=10; i++){ %>
+				<li class="page-item">
+					<a class="page-link" href="list.jsp?pageNum=<%=i %>"><%=i %></a>
+				</li>
+			<%} %>
+		</ul>
 	</div>
 </body>
 </html>
