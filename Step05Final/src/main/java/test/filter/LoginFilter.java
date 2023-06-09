@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 // urlPatterns = String[] 자바에서 배열은 중괄호 {}해서 만들고 그안에 컴마로 연결
-@WebFilter(urlPatterns = {"/private/*", "/file/private/*", "/users/private/*"})
+@WebFilter(urlPatterns = {"/private/*", "/file/private/*", "/users/private/*", "/cafe/private/*"})
 public class LoginFilter implements Filter {
 
 	@Override
