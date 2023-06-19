@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_component.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>component 정의하고 사용하기</h1>
+    <div id="app">
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+        <input type="text" v-model="msg"/>
+        <your-component v-bind:greet="'안녕하세요!'"></your-component>
+        <!-- component를 불러다 쓰면서 거기에 필요한 무언가을 넣어줄 수 있다. 여기선 문자열 -->
+        <your-component v-bind:greet="msg"></your-component>
+        <!-- component를 불러오면서 모델값 전달 -> 모델값이 변경되면 변경된 값 전달됨 -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+            	msg:""
+            },
+            components:{
+                "my-component":{
+                    template:"<div class='box'> box </div>"
+                },
+                "your-component":{
+                    template:"<div class='box'>{{greet}}</div>",
+                    props:["greet"]
+                    //여기서 properties 네임을 greet으로 지정했기 때문에 위에서 greet으로 받는것
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+

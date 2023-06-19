@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_model.html</title>
+</head>
+<body>
+    <h1>v-model 사용하기</h1>
+    <div id="app">
+        <!-- input 요소의 value 를 msg 라는 모델명으로 사용하겠다 -->
+        <input type="text" v-model="msg" > 
+        <!-- model을 지정하게되면 데이터를 바꾸는 코드 조차 필요없다.
+        코드가 있으면 자동으로 UI가 변했는데
+        이제 뭐 그냥 model사용하면 input요소에 바꾸는 것 만으로도 UI에 반영된다 -->
+        <p>{{msg}}</p>
+        
+        <!-- 원래는 -->
+        <input type="text" @input="onInput" > 
+        <p>{{msg2}}</p>
+        <!-- 해서 onInput 메소드까지 코딩해줬어야함. 근데 model사용하면 안해도 됨 -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+              msg:"",
+              msg2:""
+            },
+            methods:{
+                 onInput(e){
+                	 this.msg2=e.target.value;
+                 }
+            }
+        });
+    </script>    
+</body>
+</html>

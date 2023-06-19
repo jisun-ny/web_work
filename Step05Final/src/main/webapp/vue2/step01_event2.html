@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>/step01_event2.html</title>
+</head>
+<body>
+	<h1>이벤트 테스트2</h1>
+	<div id="app">
+		<button v-on:click="plus">+</button>
+		<button @click="minus">-</button>
+		<!-- v-on:을 @로 대체 가능 -->
+		<p>{{count}}</p>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				count:0
+			},
+			methods:{
+				// 객체 속 plus라는 방 안에 function (){}을 넣어준 것.
+				//이걸 줄여서  plus(){} 이렇게도 줄여서 표현도 가능
+				plus: function(){
+					this.count++
+				},
+				minus(){
+					this.count--
+				}
+			}
+		
+		})
+	</script>
+</body>
+</html>

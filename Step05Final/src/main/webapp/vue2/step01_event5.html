@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_event5.html</title>
+</head>
+<body>
+    <h1>이벤트 테스트5</h1>
+    <div id="app">
+        <form action="test.jsp" v-on:submit="onSubmit">
+            <input type="text">
+            <button type="submit">전송</button>
+        </form>
+        <br>
+        <!-- .prevent 수식어를 이용해서 기본 이벤트 막기 -->
+        <form action="test.jsp" v-on:submit.prevent="onSubmit2">
+        						<!-- e.preventDefault();대신 수식어를 통해 디폴트값을 프리벤트할수있음 -->
+            <input type="text">
+            <button type="submit">전송</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+              
+            },
+            methods:{
+               onSubmit:function(e){
+                   //기본 이벤트를 막아서 폼이 제출되지 않도록 한다.
+            	   e.preventDefault();
+               },
+               onSubmit2(){
+                  //여긴 이미 수식어사용해서 v-on:submit.prevent="onSubmit2" 했으니까
+                  //따로 e.preventDefault();코딩 안해줘도 자동으로 default가 prevent 됨
+               }
+            }
+        });
+    </script>    
+</body>
+</html>
