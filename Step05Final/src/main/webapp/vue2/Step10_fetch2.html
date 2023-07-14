@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Step10_fetch2.html</title>
+
+</head>
+<body>
+	<h1>ajax의 요청을 통해서 받아온 데이터 사용하기</h1>
+	<p>페이지 전환 없이 서버에 요청하는 것을 ajax라고 생각하면 된다.</p>
+	<div id="app">
+		
+		<br />
+		<table>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>작성자</th>
+					<th>제목</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- 웹 브라우저에서 데이터를 받아와서 출력하는 클라이언트 사이드 -->
+				<tr v-for="tmp in list" v-bind:key="tmp.num"> <!-- 반복문 돌면서 여러개를 찍어낼때는 보통 key값을 제공하는게 일반적이다. -->
+					<td>{{tmp.num}}</td>
+					<td>{{tmp.writer}}</td>
+					<td>{{tmp.title}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	//fetch2에서는 뷰가 실행되는 시점에 그냥 이게 실행되도록. -> created(){}사용!
+	new Vue({
+		el:"#app",
+		data: {
+			list:[]
+		},
+		created(){ //원형은 created:function(){} 이다. created방에 함수가 있는 것
+			// Vue가 준비가 되었을 때 (root component가 준비 되었을 때) 최초 한번 호출 된다.
+			fetch("/Step05Final/cafe/json_list.jsp") //이 요청을 하는 페이지를 만들어야함!
+				.then(res=>res.json())
+				.then(data => {
+					this.list = data;
+				});
+		},
+		methods:{
+			
+			}	
+	})
+</script>
+</body>
+</html>

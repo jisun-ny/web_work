@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Step10_fetch2.html</title>
+
+</head>
+<body>
+	<h1>ajax의 요청을 통해서 받아온 데이터 사용하기</h1>
+	<p>페이지 전환 없이 서버에 요청하는 것을 ajax라고 생각하면 된다.</p>
+	<div id="app">
+		<button @click = "getList">글 목록 받아오기</button>
+		<br />
+		<table>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>작성자</th>
+					<th>제목</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- 웹 브라우저에서 데이터를 받아와서 출력하는 클라이언트 사이드 -->
+				<tr v-for="tmp in list" v-bind:key="tmp.num"> <!-- 반복문 돌면서 여러개를 찍어낼때는 보통 key값을 제공하는게 일반적이다. -->
+					<td>{{tmp.num}}</td>
+					<td>{{tmp.writer}}</td>
+					<td>{{tmp.title}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+	new Vue({
+		el:"#app",
+		data: {
+			list:[]
+		},
+		methods:{
+			getList(){
+				//fetch를 이용해서 서버에 데이터를 요청한다. -> 서버에선 글 목록을 [{},{},{}...] 이런식의 제이슨 문자열로 응답을 할 것임.
+				//이렇게 모델을 덮어쓰기해버리면 UI 자동 update (this.list = 덮어쓰기)
+				fetch("/Step05Final/cafe/json_list.jsp") //이 요청을 하는 페이지를 만들어야함!
+				.then(res=>res.json())
+				.then(data => {
+					this.list = data;
+				}) //서버에서 제이슨을 응답한느것은 귀찮은 작업... -> 보통 라이브러리 사용
+				
+			}	
+		}
+	})
+</script>
+</body>
+</html>
